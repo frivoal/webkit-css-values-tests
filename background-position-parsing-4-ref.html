@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS Test reference</title>
+  <link rel="author" title="Ian Hickson" href="mailto:ian@hixie.ch">
+  <meta name="flags" content="invalid">
+  <style type="text/css">
+   .case { float: left; border: solid; margin: 0.2em; } /* 150 x 100 */
+   .test { background: #FFFFCC url(resources/ring.png) no-repeat; padding: 16px; }
+   .control { width: 118px; height: 68px; background: url(resources/diamond.png) no-repeat; }
+
+   .negative .control { background-position: 0% 0%; }
+   .negative3 .control { background-position: 50% 50%; } /* CSS3 background supports comma */
+   .case.t11 .test { background-position: bottom 54px; }
+   .case.t12 .test { background-position: 50 50%; }
+   .case.t13 .test { background-position: bottom 100; }
+   .case.t14 .test { background-position: rightbottom; }
+   .case.t15 .test { background-position: 0 right; }
+   .case.t16 .test { background-position: 0px right; }
+   .case.t17 .test { background-position: 0% right; }
+   .case.t18 .test { background-position: top 100%; }
+   .case.t19 .test { background-position: top 108px; }
+   .case.t20 .test { background-position: top top; }
+   .case.t21 .test { background-position: left right; }
+   .case.t22 .test { background-position: left left; }
+  </style>
+ </head>
+<body>
+  <p>In all the following boxes, the fuchsia diamond should be surrounded by a ring.</p>
+  <div class="case negative t11"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t12"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t13"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t14"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t15"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t16"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t17"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t18"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t19"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t20"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t21"><div class="test"><div class="control"></div></div></div>
+  <div class="case negative t22"><div class="test"><div class="control"></div></div></div>
+</body>
+</html>

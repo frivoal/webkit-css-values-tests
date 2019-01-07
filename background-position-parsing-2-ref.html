@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS Test reference</title>
+  <link rel="author" title="Ian Hickson" href="mailto:ian@hixie.ch">
+  <meta name="flags" content="invalid">
+  <style type="text/css">
+   .case { float: left; border: solid; margin: 0.2em; } /* 150 x 100 */
+   .test { background: #FFFFCC url(resources/ring.png) no-repeat; padding: 16px; }
+   .control { width: 118px; height: 68px; background: url(resources/diamond.png) no-repeat; }
+
+   .r .control { background-position: top right; }
+   .case.r0 .test { background-position: right top; }
+   .case.r1 .test { background-position: right 0; }
+   .case.r2 .test { background-position: right 0px; }
+   .case.r3 .test { background-position: right 0%; }
+   .case.r4 .test { background-position: 100% top; }
+   .case.r5 .test { background-position: 100% 0; }
+   .case.r6 .test { background-position: 100% 0px; }
+   .case.r7 .test { background-position: 100% 0%; }
+   .case.r8 .test { background-position: 108px top; }
+   .case.r9 .test { background-position: 108px 0; }
+   .case.r10 .test { background-position: 108px 0px; }
+  </style>
+ </head>
+<body>
+  <p>In all the following boxes, the fuchsia diamond should be surrounded by a ring.</p>
+  <div class="case r r0"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r1"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r2"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r3"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r4"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r5"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r6"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r7"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r8"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r9"><div class="test"><div class="control"></div></div></div>
+  <div class="case r r10"><div class="test"><div class="control"></div></div></div>
+</body>
+</html>
