@@ -3,13 +3,11 @@
 .transitionTest {
     background-color: green;
     height: 100px;
-    -webkit-transition: all 1s linear;
-    -moz-transition: all 1s linear;
+    transition: all 1s linear;
 }
 
 #startCalcEndCalc, #startCalcEndPx, #startCalcEndPercent {
     width: calc(10% + 50px);
-    width: -moz-calc(10% + 50px);
 }
 
 #startPxEndCalc {
@@ -22,7 +20,6 @@
 
 #startCalcEndCalc.go, #startPxEndCalc.go, #startPercentEndCalc.go {
     width: calc(100% - 100px);
-    width: -moz-calc(100% - 100px);
 }
 
 #startCalcEndPx.go {
