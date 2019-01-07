@@ -1,5 +1,10 @@
 <!DOCTYPE HTML>
-<script src="../../resources/js-test-pre.js"></script>
+<title>CSS test: calc() in font-size</title>
+<meta name="assert" content="calc() should work in font-size">
+<meta name="flags" content="">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel="help" href="https://drafts.csswg.org/css-fonts-3/#font-size-prop">
+<link rel="match" href="font-size-ref.html">
 <style> 
 #control {font-size: 200%;}
 #calc-percent {font-size: calc(200%);}
@@ -13,16 +18,3 @@
 <br/>
 <span class="fonttest" id="calc-percent-pixels">The font size of these lines should be identical</span>
 </div>
-
-<script>
-description("Tests that CSS3 calc() can be used with the font-size property");
-
-var spans = document.getElementsByClassName("fonttest");
-for (var i = 0; i < spans.length; ++i) {
-    shouldBeEqualToString('getComputedStyle(document.getElementById("' + spans[i].id + '"), null).fontSize', getComputedStyle(document.getElementById("control"), null).fontSize);
-}
-
-if (window.testRunner)
-    document.body.removeChild(document.getElementById("test-container"));
-</script>
-<script src="../../resources/js-test-post.js"></script>
