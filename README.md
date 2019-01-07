@@ -27,3 +27,10 @@ The following tests may be ported to WPT, as they test standard features, as the
 * cubic-bezier-with-multiple-calcs-crash.html.html
 
 Everything else should be added to WPT.
+
+----
+
+Todo: finish reviewing and converting the following tests:
+* those listed above as (maybe) not to be ported to WPT
+* getComputedStyle-margin-percentage.html
+* Everything in alphabetic order starting from: simple-calcs.html
