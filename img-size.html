@@ -1,5 +1,10 @@
 <!doctype html>
 <meta charset="utf-8">
+<title>CSS test: calc() on image width</title>
+<meta name="assert" content="calc() works in the width property on images">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel="help" href="https://drafts.csswg.org/css-sizing/#sizing-properties">
+<meta name="flags"  content="">
 <link rel='match' href='img-size-ref.html'>
 <style>
     img      { margin-top: 10px;}
@@ -11,8 +16,8 @@
 
 The images below must appear identical.
 <div style="width:200px;">
-    <img class="control" src="./resources/colorsquare.png">
-    <img class="pixels"  src="./resources/colorsquare.png">
-    <img class="percent" src="./resources/colorsquare.png">
-    <img class="both"    src="./resources/colorsquare.png">
+    <img class="control" src="resources/colorsquare.png">
+    <img class="pixels"  src="resources/colorsquare.png">
+    <img class="percent" src="resources/colorsquare.png">
+    <img class="both"    src="resources/colorsquare.png">
 </div>
