@@ -1,8 +1,11 @@
 <!doctype html>
 <meta charset="utf-8">
 <title>CSS Test: calc() function in cross-fade</title>
-<script src="../../resources/testharness.js"></script>
-<script src="../../resources/testharnessreport.js"></script>
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel="help" href="https://drafts.csswg.org/css-images-4/#cross-fade-function">
+<meta name="flags"  content="">
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
 <style>
     #test {
         background-image: cross-fade(url(dummy://example.png), url(dummy://example.png), calc(35% * 2));
