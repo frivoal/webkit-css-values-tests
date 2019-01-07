@@ -1,6 +1,11 @@
 <!DOCTYPE HTML>
 <meta charset="utf-8">
-<script src="../../resources/js-test-pre.js"></script>
+<title>CSS test: calc() in color: hsl()</title>
+<meta name="assert" content="Tests that CSS3 calc() can be used with the hsl() and hsla() functions">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel="help" href="https://drafts.csswg.org/css-color-4/#the-hsl-notation">
+<meta name="flags"  content="">
+<link rel='match' href='color-hsl-ref.html'>
 <style>
     #controlsimple { color: hsl(120,75%,50%); }
     #simple        { color: hsl(calc(120),calc(75%),calc(50%)); }
@@ -16,18 +21,3 @@
     <div id="controlalpha">These two sentences should be the same color (alpha)</div>
     <div id="alpha">These two sentences should be the same color (alpha)</div>
 </div>
-<script>
-    description("Tests that CSS3 calc() can be used with the hsl() and hsla() functions");
-    
-    tests = ["simple", "alpha"];
-
-    for (i = 0; i < tests.length; i++) {
-        var test = tests[i];
-        shouldBeEqualToString('getComputedStyle(document.getElementById("' + test + '"), null).color', getComputedStyle(document.getElementById("control" + test), null).color);
-    }
-    
-    if (window.testRunner)
-        document.body.removeChild(document.getElementById("test-container"));   
-</script>
-<script src="../../resources/js-test-post.js"></script>
-
