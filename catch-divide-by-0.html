@@ -1,11 +1,14 @@
 <!DOCTYPE HTML>
 <meta charset="utf-8">
-<div id="dummy"></div>
-<div id="results">This tests catching of divide by 0 in calc() at parse time<br><br></div>
-<script>
-if (window.testRunner)
-    window.testRunner.dumpAsText();
+<title>CSS test: calc() divide by 0</title>
+<meta name="assert" content="This tests catching of divide by 0 in calc() at parse time">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<meta name="flags"  content="invalid">
+<link rel='match' href='catch-divide-by-0-ref.html'>
 
+<div id="dummy"></div>
+<p id="results">Test passes if all lines below end with =><br><br></div>
+<script>
 var tests = [
     "100px / 0",
     "100px / (0)",
