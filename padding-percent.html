@@ -1,22 +1,24 @@
 <!DOCTYPE HTML>
-<title>CSS test: calc() in padding</title>
-<link rel="match" href="padding-ref.html">
-<meta name="assert" content="calc() works in the padding properties">
+<title>CSS test: calc(%) in padding</title>
+<link rel="match" href="padding-percent-ref.html">
+<meta name="assert" content="calc() with percent works in the padding properties">
 <meta name="flags"  content="">
 <style>
-    p { width:200px; height: 80px; }
-    .simple-all     { padding: calc(13px + 12px); }
-    .simple-left    { padding-left: calc(13px + 12px); }
-    .simple-right   { padding-right: calc(13px + 12px); }
-    .simple-top     { padding-top: calc(13px + 12px); }
-    .simple-bottom  { padding-bottom: calc(13px + 12px); }
+    p { width:200px; height:80px; }
+    .percent-all    { padding: calc(10% - 5px); }
+    .percent-left   { padding-left: calc(10% - 5px); }
+    .percent-right  { padding-right: calc(10% - 5px); }
+    .percent-top    { padding-top: calc(10% - 5px); }
+    .percent-bottom { padding-bottom: calc(10% - 5px); }
 </style>
 
-<p class="simple-all">This element should have an overall padding of 25 pixels.</p>
-<p class="simple-left">This element should have a left padding of 25 pixels.</p>
-<p class="simple-right">This element should have a right padding of 25 pixels.</p>
-<p class="simple-top">This element should have a top padding of 25 pixels.</p>
-<p class="simple-bottom">This element should have a bottom padding of 25 pixels.</p>
+<div style="width: 300px; background-color: cornsilk;">
+    <p class="percent-all">This element should have an overall padding of 25 pixels (10% of parent width of 300px minus 5px).</p>
+    <p class="percent-left">This element should have a left padding of 25 pixels (10% of parent width of 300px minus 5px).</p>
+    <p class="percent-right">This element should have a right padding of 25 pixels (10% of parent width of 300px minus 5px).</p>
+    <p class="percent-top">This element should have a top padding of 25 pixels (10% of parent width of 300px minus 5px).</p>
+    <p class="percent-bottom">This element should have a bottom padding of 25 pixels (10% of parent width of 300px minus 5px).</p>
+</div>
 
 <script>
     var innerWidth = 200;
