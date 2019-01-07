@@ -1,14 +1,22 @@
 <!DOCTYPE HTML>
 <meta charset="utf-8">
+<title>CSS test: incorrect calc syntax</title>
+<meta name="flags" content="invalid">
+<meta name="assert" content="various invalid attempts to write incorrect calc() must all fail">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel='match' href='calc-errors-ref.html'>
 <style>
 #test div {
-    height: 100px;
+    height: 75px;
     background-color: red;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 1px;
 }
 </style>
 
 <p>
-  All boxes below should be 100px * 100px and green.
+  All boxes below should be 100px * 75px and green.
 </p>
 
 <div id="test">
@@ -85,19 +93,12 @@
 </div>
 
 <script>
-if (window.testRunner)
-    testRunner.dumpAsText();
-
 var test = document.getElementById("test");
 for (var element = test.firstChild; element; element = element.nextSibling) {
     var width = element.offsetWidth;
     var error = [];
     if (width != 100)
         error.push("expected width of 100, but was " + width);
-    var height = element.offsetHeight;
-    if (height != 100)
-        error.push("expected height of 100, but was " + width);
-
     if (error == "") {
         element.style.backgroundColor = "green";
         element.innerHTML += " => PASS";

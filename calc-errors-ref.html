@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<title>CSS test reference</title>
+<style>
+#test div {
+    height: 75px;
+    background-color: green;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 1px;
+}
+</style>
+
+<p>
+  All boxes below should be 100px * 75px and green.
+</p>
+
+<div id="test">
+
+<!-- just plain bad -->
+<div style="width: 100px;">unclosed calc => PASS</div>
+<div style="width: 100px;">unclosed calc with garbage => PASS</div>
+<div style="width: 100px;">garbage => PASS</div>
+
+
+<!-- zero division -->
+<div style="width: 100px;">zero division => PASS</div>
+
+<!-- wrong combination -->
+<div style="width: 100px;">non length => PASS</div>
+<div style="width: 100px;">number + length => PASS</div>
+<div style="width: 100px;">length + number => PASS</div>
+<div style="width: 100px;">percent + number => PASS</div>
+<div style="width: 100px;">number + percent => PASS</div>
+
+<div style="width: 100px;">length - number => PASS</div>
+<div style="width: 100px;">number - length => PASS</div>
+<div style="width: 100px;">percent - number => PASS</div>
+<div style="width: 100px;">number - percent => PASS</div>
+
+<div style="width: 100px;">length * length => PASS</div>
+<div style="width: 100px;">length * percent => PASS</div>
+<div style="width: 100px;">percent * length => PASS</div>
+<div style="width: 100px;">percent * percent => PASS</div>
+
+<div style="width: 100px;">number / length => PASS</div>
+<div style="width: 100px;">number / percent => PASS</div>
+<div style="width: 100px;">length / length => PASS</div>
+<div style="width: 100px;">length / percent => PASS</div>
+<div style="width: 100px;">percent / length => PASS</div>
+<div style="width: 100px;">percent / percent => PASS</div>
+
+<div style="width: 100px;">number mod length => PASS</div>
+<div style="width: 100px;">number mod percent => PASS</div>
+<div style="width: 100px;">length mod length => PASS</div>
+<div style="width: 100px;">length mod percent => PASS</div>
+<div style="width: 100px;">percent mod length => PASS</div>
+<div style="width: 100px;">percent mod percent => PASS</div>
+
+<!-- mod, +, - require whitespaces around the operator -->
+<div style="width: 100px;">mod10  => PASS</div>
+<div style="width: 100px;">1mod => PASS</div>
+<div style="width: 100px;">70px+40px no whitespace around +  => PASS</div>
+<div style="width: 100px;">70px +40px no whitespace on right of + => PASS</div>
+<div style="width: 100px;">70px+ 40px no whitespace on left of + => PASS</div>
+<div style="width: 100px;">70px+-40px no whitespace around +  => PASS</div>
+<div style="width: 100px;">70px-40px no whitespace around -  => PASS</div>
+<div style="width: 100px;">70px -40px no whitespace on right of - => PASS</div>
+<div style="width: 100px;">70px- 40px no whitespace on left of - => PASS</div>
+<div style="width: 100px;">70px-+40px no whitespace around -  => PASS</div>
+
+<!-- too many nests should be rejected to avoid stack overflow -->
+<div style="width: 100px;">too many nests => PASS</div>
+ 
+<!-- invalid formulas -->
+<div style="width: 100px;">end with operator => PASS</div>
+<div style="width: 100px;">start with operator => PASS</div>
+<div style="width: 100px;">no expressions => PASS</div>
+<div style="width: 100px;">too many pluses => PASS</div>
+<div style="width: 100px;">no binary operator => PASS</div>
+<div style="width: 100px;">two binary operators => PASS</div>
+<div style="width: 100px;">invalid operator '@' => PASS</div>
+<div style="width: 100px;">invalid operator 'flim' => PASS</div>
+<div style="width: 100px;">invalid operator '@' => PASS</div>
+<div style="width: 100px;">invalid operator 'flim' => PASS</div>
+<div style="width: 100px;">invalid operator 'flim' with parens => PASS</div>
+ 
+</div>
