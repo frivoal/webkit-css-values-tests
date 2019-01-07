@@ -26,4 +26,4 @@ The following tests may be ported to WPT, as they test standard features, as the
 * regression-62276.html
 * cubic-bezier-with-multiple-calcs-crash.html.html
 
-Everything else should
+Everything else should be added to WPT.
