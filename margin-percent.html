@@ -5,18 +5,20 @@
 <meta name="flags"  content="">
 <style>
     p { width: 200px; height: 80px; margin: 0px; display: inline-block; }
-    #simple-all { margin: calc(13px + 12px); }
-    #simple-left { margin-left: calc(13px + 12px); }
-    #simple-right { margin-right: calc(13px + 12px); }
-    #simple-top { margin-top: calc(13px + 12px); }
-    #simple-bottom { margin-bottom: calc(13px + 12px); }
+    #percent-all { margin: calc(10% - 5px); }
+    #percent-left { margin-left: calc(10% - 5px); }
+    #percent-right { margin-right: calc(10% - 5px); }
+    #percent-top { margin-top: calc(10% - 5px); }
+    #percent-bottom { margin-bottom: calc(10% - 5px); }
 </style>
 
-<p id="simple-all">This element should have an overall margin of 25 pixels.</p><br/>
-<p id="simple-left">This element should have a left margin of 25 pixels.</p><br/>
-<p id="simple-right">This element should have a right margin of 25 pixels.</p><br/>
-<p id="simple-top">This element should have a top margin of 25 pixels.</p><br/>
-<p id="simple-bottom">This element should have a bottom margin of 25 pixels.</p><br/>
+<div id="wrapper" style="width: 300px; background-color: cornsilk;">
+    <p id="percent-all">This element should have an overall margin of 25 pixels (10% of parent width of 300px minus 5px).</p><br/>
+    <p id="percent-left">This element should have a left margin of 25 pixels (10% of parent width of 300px minus 5px).</p><br/>
+    <p id="percent-right">This element should have a right margin of 25 pixels (10% of parent width of 300px minus 5px).</p><br/>
+    <p id="percent-top">This element should have a top margin of 25 pixels (10% of parent width of 300px minus 5px).</p><br/>
+    <p id="percent-bottom">This element should have a bottom margin of 25 pixels (10% of parent width of 300px minus 5px).</p><br/>
+</div>
 <script>
     function computedMarginLeft(id)
     {
