@@ -1,4 +1,4 @@
-This repo contains copies of the tests from https://trac.webkit.org/browser/webkit/trunk/LayoutTests/css3/calc,
+This repo contains copies of the tests from https://trac.webkit.org/browser/webkit/trunk/LayoutTests/css3/calc as of revision 239665,
 with a series of fixes to make them:
 * correct according to the latest spec
 * acceptable for submission to [WPT](https://github.com/web-platform-tests/wpt)
