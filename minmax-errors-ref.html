@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<title>CSS test reference</title>
+<style>
+#test div {
+    height: 100px;
+    background-color: green;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 1px;
+}
+</style>
+
+<p>
+  All boxes below should be 100px * 100px and green.
+</p>
+
+<div id="test">
+
+<!--Bare min()-->
+<div style="width: 100px;">unclosed min => PASS</div>
+<div style="width: 100px;">unclosed min with garbage => PASS</div>
+<div style="width: 100px;">garbage => PASS</div>
+<div style="width: 100px;">extra trailing comma => PASS</div>
+<div style="width: 100px;">leading comma => PASS</div>
+<div style="width: 100px;">trailing garbage => PASS</div>
+<div style="width: 100px;">bad expression => PASS</div>
+<div style="width: 100px;">mix length and number => PASS</div>
+<div style="width: 100px;">mix number and length => PASS</div>
+<div style="width: 100px;">mix percent and number => PASS</div>
+<div style="width: 100px;">mix number and percent => PASS</div>
+
+<!--min() inside calc()-->
+<div style="width: 100px;">unclosed min => PASS</div>
+<div style="width: 100px;">unclosed min with garbage => PASS</div>
+<div style="width: 100px;">garbage => PASS</div>
+<div style="width: 100px;">extra trailing comma => PASS</div>
+<div style="width: 100px;">leading comma => PASS</div>
+<div style="width: 100px;">trailing garbage => PASS</div>
+<div style="width: 100px;">bad expression => PASS</div>
+<div style="width: 100px;">mix length and number => PASS</div>
+<div style="width: 100px;">mix number and length => PASS</div>
+<div style="width: 100px;">mix percent and number => PASS</div>
+<div style="width: 100px;">mix number and percent => PASS</div>
+
+<!--Bare max()-->
+<div style="width: 100px;">unclosed max => PASS</div>
+<div style="width: 100px;">unclosed max with garbage => PASS</div>
+<div style="width: 100px;">mix length and number => PASS</div>
+<div style="width: 100px;">mix number and length => PASS</div>
+<div style="width: 100px;">mix percent and number => PASS</div>
+<div style="width: 100px;">mix number and percent => PASS</div>
+
+<!--max() inside calc-->
+<div style="width: 100px;">unclosed max => PASS</div>
+<div style="width: 100px;">unclosed max with garbage => PASS</div>
+<div style="width: 100px;">mix length and number => PASS</div>
+<div style="width: 100px;">mix number and length => PASS</div>
+<div style="width: 100px;">mix percent and number => PASS</div>
+<div style="width: 100px;">mix number and percent => PASS</div>
+
+</div>
