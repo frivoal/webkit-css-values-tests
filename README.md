@@ -15,7 +15,7 @@ The following test should not be ported to WPT, since they test features that ar
 * reflection-computed-style.html
 
 
-The following tests may be ported to WPT, as they test standard features, as they are crash tests rather than conformance tests, it is not certain whether that's useful:
+The following tests may be ported to WPT, as they test standard features, but as they are crash tests rather than conformance tests, it is not certain whether that's useful:
 * transition-crash.html
 * transition-crash2.html
 * transition-crash3.html
