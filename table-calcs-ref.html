@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<title>CSS test reference</title>
+<style>
+    #test > * { vertical-align: bottom; }
+    table { margin: 1px; }
+    #test > div { display: inline-block; }
+    #test > table { display: inline-table; }
+    table {
+        border-spacing: 0px;
+        padding: 0px;
+        width: 100px; 
+        height: 100px;
+        background: green;
+    }
+    td { padding : 0; }
+</style>
+<p>Test passes if all boxes below are 100px by 100px and green.
+<div id="test">
+    <table><tr><td>control width: 100px => PASS</table>
+    <table><tr><td>simple 100px => PASS</table>
+    <table><tr><td>25px * 4 => PASS</table>
+    <table><tr><td>control height: 100px => PASS</table>
+    <table><tr><td>simple 100px => PASS</table>
+    <table><tr><td>25px * 4 => PASS</table>
+    <div style="width:400px;">
+      <table><tr><td>control width:25% => PASS</table>
+      <table><tr><td>simple calc(25%) => PASS</table>
+      <table><tr><td>calc(10% * 2 + 5%) => PASS</table>
+    </div>
+    <div style="height: 400px">
+      <table><tr><td>control height:25% => PASS</table>
+    </div>
+    <div style="height: 400px">
+      <table><tr><td>simple calc(25%) => PASS</table>
+    </div>
+    <div style="height: 400px">
+      <table><tr><td>calc(10% * 2 + 5%) => PASS</table>
+    </div>
+</div>

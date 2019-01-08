@@ -1,7 +1,16 @@
 <!DOCTYPE HTML>
 <meta charset="utf-8">
-<script src="../../resources/js-test-pre.js"></script>
+<title>CSS test: calc() and tables</title>
+<meta name="assert" content="Tests that CSS3 calc() can be used in tables">
+<meta name="flags" content="">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel="match" href="table-calcs-ref.html">
 <style>
+    #test > * { vertical-align: bottom; }
+    table { margin: 1px; }
+    #test > div { display: inline-block; }
+    #test > table { display: inline-table; }
+    #test > div { display: inline-block; }
     table {
         border-spacing: 0px;
     }
@@ -28,6 +37,7 @@
         width: 100px;
     }
 </style>
+<p>Test passes if all boxes below are 100px by 100px and green.
 <div id="test">
     <table><tr><td class="width-test" style="width: 100px;">control width: 100px</td></tr></table>
     <table><tr><td class="width-test" style="width: calc(100px);">simple 100px</td></tr></table>
@@ -51,7 +61,6 @@
     </div>
 </div>
 <script>
-    description("Tests that CSS3 calc() can be used in tables");
 
     var cells = document.getElementById("test").getElementsByTagName("td");
     for (var i = 0; i < cells.length; ++i) {
@@ -60,9 +69,6 @@
             continue;
         var width = cell.offsetWidth;
         var height = cell.offsetHeight;
-
-        shouldEvaluateTo("cell.offsetWidth", 100);
-        shouldEvaluateTo("cell.offsetHeight", 100);
 
         var error = [];
         if (width != 100)
@@ -78,7 +84,4 @@
             cell.innerHTML += " => FAIL: " + error.join(", ");
         }
     }
-    if (window.testRunner)
-        document.body.removeChild(document.getElementById("test"));
 </script>
-<script src="../../resources/js-test-post.js"></script>
