@@ -33,4 +33,7 @@ Everything else should be added to WPT.
 Todo: finish reviewing and converting the following tests:
 * those listed above as (maybe) not to be ported to WPT
 * getComputedStyle-margin-percentage.html
-* Everything in alphabetic order starting from: simple-calcs.html
+* simple-calcs.html
+* simplification.html
+* transitions-dependent.html
+* transitions.html
