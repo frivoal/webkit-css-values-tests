@@ -15,7 +15,7 @@ The following test should not be ported to WPT, since they test features that ar
 * reflection-computed-style.html
 
 
-The following tests may be ported to WPT, as they test standard features, but as they are crash tests rather than conformance tests, it is not certain whether that's useful:
+The following tests could be ported to WPT, as they test standard features, but as they are crash tests rather than conformance tests, it is not certain whether that's useful:
 * transition-crash.html
 * transition-crash2.html
 * transition-crash3.html
@@ -26,14 +26,16 @@ The following tests may be ported to WPT, as they test standard features, but as
 * regression-62276.html
 * cubic-bezier-with-multiple-calcs-crash.html.html
 
+The following tests check behavior that isn't actually defined, and it looks like it might not end up being defined the same way as the tests expect (see https://drafts.csswg.org/css-values-3/#calc-serialize or https://drafts.csswg.org/css-values-4/#calc-serialize):
+* getComputedStyle-margin-percentage.html
+* cssom.html
+* simple-calcs.html
+* simplification.html
+
 Everything else should be added to WPT.
 
 ----
 
 Todo: finish reviewing and converting the following tests:
-* those listed above as (maybe) not to be ported to WPT
-* getComputedStyle-margin-percentage.html
-* simple-calcs.html
-* simplification.html
 * transitions-dependent.html
 * transitions.html
