@@ -1,5 +1,9 @@
 <!DOCTYPE HTML>
 <meta charset="utf-8">
+<title>CSS Test: calc() on table with empty cells</title>
+<meta name="assert" content="calc() expressions work in a bunch of situations involving tables with empty cells">
+<meta name="flags" content="">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
 <link rel='match' href='table-empty-cells-ref.html'>
 <style> 
     table {
@@ -14,6 +18,7 @@
     .margin  { margin: calc(2px) } 
     .pre     { white-space: pre }
     table    { border: calc(2px) solid black }
+    .bgcolor { background: aqua; }
 </style>
 <body leftmargin="0" topmargin="0">
     <table>
@@ -88,20 +93,11 @@
         </tbody>
     </table>
 
-    <table id=c cellspacing="1" width="100%">
+    <table id=c style="border-spacing:1px" width="100%">
         <tbody>
         <tr>
         <td/>
-        <td class="cell1 percent">First cell empty, table has cellspacing</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <table id=c width="100%">
-        <tbody>
-        <tr>
-        <td class="margin"> </td>
-        <td class="cell1 percent">First cell empty but has margin</td>
+        <td class="cell1 percent">First cell empty, table has border-spacing</td>
         </tr>
         </tbody>
     </table>
