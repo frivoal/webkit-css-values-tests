@@ -6,15 +6,19 @@
     width:100px;
     height:100px;
     margin:50px;
-    background-color:green;  	
   }
 
-  #scalex {
+  .scalex {
+    background-color: blue;
     transform: scalex(1.5);
   }
-  #scaley {
+  .scaley {
+    background-color: orange;
     transform: scaley(0.75);
   }
 </style>
-<div id="scalex">scale x</div>
-<div id="scaley">scale y</div>
+<p>Test passes if boxes of the same color are the same size.
+<div class="scalex"></div>
+<div class="scalex"></div>
+<div class="scaley"></div>
+<div class="scaley"></div>

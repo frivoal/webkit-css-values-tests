@@ -1,20 +1,37 @@
 <!DOCTYPE HTML>
 <meta charset="utf-8">
+<title>CSS test: calc() and scale transforms</title>
+<meta name="assert" content="calc() works in the scalex() and scaley() transforms">
+<meta name="flags" content="">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel="help" href="https://drafts.csswg.org/css-transforms-1/#two-d-transform-functions">
 <link rel='match' href='transforms-scale-ref.html'>
 <style>
   div {
     width:100px;
     height:100px;
     margin:50px;
-    background-color:green;  	
   }
 
+  #scalex-ref {
+    background-color: blue;
+    transform: scalex(1.5);
+  }
+  #scaley-ref {
+    background-color: orange;
+    transform: scaley(0.75);
+  }
   #scalex {
+    background-color: blue;
     transform: scalex(calc(3 / 2));
   }
   #scaley {
+    background-color: orange;
     transform: scaley(calc(1 - 0.25));
   }
 </style>
-<div id="scalex">scale x</div>
-<div id="scaley">scale y</div>
+<p>Test passes if boxes of the same color are the same size.
+<div id="scalex-ref"></div>
+<div id="scalex"></div>
+<div id="scaley-ref"></div>
+<div id="scaley"></div>
