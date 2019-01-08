@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<script src="../../resources/js-test-pre.js"></script>
+<title>CSS test: calc() and border-spacing</title>
+<meta name="assert" content="calc() can be used in the border-spacing property">
+<meta name="flags" content="">
+<link rel="help" href="https://drafts.csswg.org/css-values-3/#calc-notation">
+<link rel="help" href="https://drafts.csswg.org/css2/tables.html#propdef-border-spacing">
+<script src="/resources/testharness.js" ></script>
+<script src="/resources/testharnessreport.js"></script>
 <style>
     td { 
         padding: 0; 
@@ -31,6 +37,7 @@
     </tr>
 </table>
 <script>
+test(function() {
     var innerBorder = 1;
     var outerBorder = 3;
     var innerWidth = 50 + 2 * innerBorder;
@@ -42,8 +49,7 @@
     var expectedWidth = innerWidth * columns + borderSpacing * (columns + 1) + 2 * outerBorder;
     var expectedHeight = innerHeight * rows + borderSpacing * (rows + 1) + 2 * outerBorder;
 
-    shouldEvaluateTo('document.getElementById("stimulus").offsetWidth', expectedWidth);
-    shouldEvaluateTo('document.getElementById("stimulus").offsetHeight', expectedHeight);
+    assert_equals(document.getElementById("stimulus").offsetWidth, expectedWidth, "the width is as expected");
+    assert_equals(document.getElementById("stimulus").offsetHeight, expectedHeight, "the height is as expected");
+}, "calc() in border-spacing");
 </script>    
-<script src="../../resources/js-test-post.js"></script>
-
