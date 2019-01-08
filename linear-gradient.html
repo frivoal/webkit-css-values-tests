@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>CSS Values Test: 2 calc() function in linear-gradient()</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+
+<style>
+  div#test {
+      background-image: linear-gradient(calc(90deg), rgb(255, 255, 0), rgb(0, 0, 255) calc(5% * 4 + 30%));
+      height: 100px;
+  }
+</style>
+
+<div id="test"></div>
+
+<script>
+  var tested_div = document.querySelector("#test");
+  var expected_output = 'linear-gradient(90deg, rgb(255, 255, 0), rgb(0, 0, 255) 50%)';
+    test(function() {
+        assert_equals(getComputedStyle(tested_div).backgroundImage, expected_output);
+    }, "2 calc() in a linear-gradient()");
+</script>
+
